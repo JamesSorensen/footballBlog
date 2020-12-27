@@ -1,0 +1,32 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: $footerHeight;
+  border-top: 1px solid $greyColor;
+  background-color: $primaryColor;
+
+  .container {
+    height: 100%;
+    line-height: $footerHeight;
+    padding: 0 15px 0 15px;
+    display: grid;
+    justify-content: end;
+  }
+
+  .social {
+    display: flex;
+    list-style: none;
+
+    li {
+      margin-right: 15px;
+
+      i {
+        color: $whiteColor;
+        font-size: 17px;
+      }
+    }
+  }
+}

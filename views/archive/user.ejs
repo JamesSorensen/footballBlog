@@ -1,0 +1,57 @@
+ <%- include('../layout/header'); -%>
+
+<div class="main">
+    <div class="container">
+      <div class="content">
+
+        <% for (var i = 0; i < posts.length; i++) { %>
+        
+        <div class="post">
+          <div class="top">
+            <a href="/posts/<%=posts[i].url %>">
+              <h2>
+                <%=posts[i].title %>
+                <% if (posts[i].owner == user.id) { %>
+                  <a href="/post/edit/<%=posts[i].id %>">✎</a>
+                <% } %>
+              </h2>
+              
+            </a>
+          </div>  
+          <div class="body">
+            <p>
+              <%=posts[i].body %>
+            </p>
+          </div>
+          <div class="bottom">
+            <div class="author">
+              
+            </div>
+            <a href="/">Коментарии: <%=posts[i].commentCount %></a>
+          </div>
+        </div>
+
+         <% } %>
+
+         <div class="pagination">
+          
+            <% if (current > 2) { %>
+              <a class="new" href="/users/<%=_user.login %>/<%= Number(current) - 1 %>">← К новым</a>
+            <% } %>
+
+            <% if (current == 2) { %>
+              <a class="new" href="/users/<%=_user.login %>">← На первую</a>
+            <% } %>
+
+             <% if (pages > 0 && current < pages) { %>
+              <a class="old" href="/users/<%=_user.login %>/<%= Number(current) + 1 %>">К старым →</a>
+             <% } %>
+
+            </div>
+      
+      </div>
+       <%- include('../layout/sidebar'); -%>
+    </div>
+  </div>
+
+<%- include('../layout/footer'); -%>
