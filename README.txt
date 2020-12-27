@@ -39,7 +39,6 @@ FrontEnd:
 
 
 Functional:
-
  Personal account
  User registration ( Login & Password )
  Create, delete and edit posts
